@@ -1,0 +1,390 @@
+<!-- 
+  Documento: Maratón de Estudios IPN - Física y Mate en 3 días
+  Creado por el Comando Neptur para la misión educativa IPN Galaxia Beta 3.0.
+  Versión: 1.0
+  Objetivo: Guía de repaso intensivo con trucos mentales y mnemotecnias.
+-->
+
+<style>
+  /* --- CONFIGURACIÓN GENERAL DEL COSMOS --- */
+  .maraton-ipn-container {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background: #0a0f2acc; /* Nebulosa oscura */
+    color: #e0e5ff;
+    max-width: 800px;
+    margin: auto;
+    padding: 2rem;
+    border-radius: 15px;
+    border: 1px solid #4a4e91;
+    box-shadow: 0 0 40px rgba(76, 89, 255, 0.4);
+    animation: fadeInContainer 1s ease-in-out;
+  }
+
+  @keyframes fadeInContainer {
+    from { opacity: 0; transform: scale(0.98); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  /* --- TÍTULOS Y TEXTOS --- */
+  .maraton-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #3a3f7c;
+  }
+
+  .maraton-header h1 {
+    font-size: 2.2rem;
+    color: #ffffff;
+    text-shadow: 0 0 8px #00d4ff, 0 0 15px #00d4ff;
+    margin-bottom: 0.5rem;
+  }
+
+  .maraton-header p {
+    font-size: 1.1rem;
+    color: #c0c8ff;
+    font-style: italic;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+    color: #90a0ff;
+    margin-top: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  p, li {
+    line-height: 1.6;
+    font-size: 1rem;
+  }
+
+  strong {
+    color: #82ffff; /* Cian neón */
+  }
+
+  /* --- SECCIONES COLAPSABLES (SIN JS) --- */
+  details {
+    background: linear-gradient(145deg, #1a183e, #110f2d);
+    border: 1px solid #3a3f7c;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    transition: box-shadow 0.3s ease;
+  }
+
+  details[open] {
+    box-shadow: 0 8px 30px rgba(0, 212, 255, 0.2);
+  }
+
+  summary {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #e0e5ff;
+    padding: 1.5rem;
+    cursor: pointer;
+    list-style: none; /* Oculta el marcador por defecto */
+    transition: background-color 0.3s ease;
+  }
+  
+  summary:hover {
+    background-color: #2a285e;
+  }
+
+  summary::-webkit-details-marker {
+    display: none; /* Oculta el marcador en Chrome/Safari */
+  }
+
+  summary::before {
+    content: '▶';
+    margin-right: 1rem;
+    color: #ff00c8; /* Magenta neón */
+    display: inline-block;
+    transition: transform 0.3s ease;
+  }
+
+  details[open] > summary::before {
+    transform: rotate(90deg);
+  }
+
+  .topics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    padding: 0 1.5rem 1.5rem 1.5rem;
+  }
+
+  /* --- TARJETAS DE TEMA --- */
+  .topic-card {
+    background-color: #0c0a1f;
+    border: 1px solid #3a3f7c;
+    border-radius: 10px;
+    padding: 1rem;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+  }
+  
+  .topic-card:hover {
+    transform: translateY(-5px);
+    border-color: #00d4ff;
+  }
+
+  .topic-card h3 {
+    font-size: 1.2rem;
+    color: #82ffff;
+    margin-top: 0;
+  }
+
+  .topic-card .tip {
+    background-color: rgba(42, 40, 80, 0.5);
+    padding: 0.75rem;
+    border-left: 3px solid #ff00c8;
+    border-radius: 0 5px 5px 0;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .tip strong {
+    color: #ffffff;
+  }
+
+  /* --- SECCIÓN DE CONSEJOS FINALES Y CRÉDITOS --- */
+  .final-tips-card {
+    background: linear-gradient(145deg, #1a183e, #110f2d);
+    border: 1px solid #3a3f7c;
+    border-radius: 12px;
+    padding: 1.5rem;
+  }
+  
+  .final-tips-card ul {
+    list-style-type: '⚡ ';
+    padding-left: 1.5rem;
+  }
+
+  .maraton-footer {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #3a3f7c;
+    font-size: 0.9rem;
+    color: #8088cc;
+  }
+</style>
+
+<div class="maraton-ipn-container">
+
+  <header class="maraton-header">
+    <h1>🧪📐 ¡Maratón de estudios IPN! Física y Mate en 3 días</h1>
+    <p>Activa el motor hiperlumínico de tu mente y domina el universo del conocimiento en tiempo récord.</p>
+  </header>
+
+  <section>
+    <h2>🚀 Plan de Vuelo: Tu Estrategia de 3 Días</h2>
+    <p>¡Cadete! Esta no es una misión ordinaria. Para conquistar este maratón, necesitas una estrategia de hiperenfoque. Usa la <strong>Técnica Pomodoro Galáctico</strong>: 45 minutos de estudio intenso (una "órbita de enfoque") seguidos de 10 minutos de descanso para recargar tu "combustible mental". ¡El descanso es tan crucial como el estudio!</p>
+  </section>
+
+  <!-- SECCIÓN DE FÍSICA -->
+  <details>
+    <summary>🔵 Misión: Física Cósmica</summary>
+    <div class="topics-grid">
+      
+      <div class="topic-card">
+        <h3>1. Álgebra Vectorial</h3>
+        <p>Los vectores son flechas con magnitud y dirección. Esenciales para describir fuerzas, velocidades y campos en el espacio.</p>
+        <div class="tip"><strong>Salto Cuántico 🚀:</strong> Piensa en un vector como las coordenadas de un salto hiperespacial: te dice "qué tan lejos" (magnitud) y "hacia dónde" (dirección) vas.</div>
+      </div>
+
+      <div class="topic-card">
+        <h3>2. Leyes de Newton</h3>
+        <p>Las 3 reglas que gobiernan el movimiento de todo, desde naves espaciales hasta planetas. (Inercia, F=ma, Acción-Reacción).</p>
+        <div class="tip"><strong>Truco Mental 🧠:</strong> I-FA-R. <strong>I</strong>nercia (quieto se queda), <strong>F</strong>uerza=<strong>A</strong>celeración (más empujas, más rápido va), <strong>R</strong>eacción (si empujas, te empujan).</div>
+      </div>
+
+      <div class="topic-card">
+        <h3>3. Trabajo y Energía</h3>
+        <p>El trabajo es la energía transferida al aplicar una fuerza. La energía se conserva, solo se transforma (potencial a cinética, etc.).</p>
+        <div class="tip"><strong>Metáfora Galáctica 🌌:</strong> La energía potencial es el combustible almacenado. La energía cinética es la nave en movimiento. El trabajo es el acto de quemar combustible para moverse.</div>
+      </div>
+      
+      <div class="topic-card">
+        <h3>4. Termodinámica</h3>
+        <p>Estudia el calor, la energía y el desorden (entropía) del universo. La energía no se crea ni se destruye, solo se transforma.</p>
+        <div class="tip"><strong>Truco Mental 🧠:</strong> Ley 0: Si A=B y B=C, A=C (equilibrio). Ley 1: La energía se conserva. Ley 2: El desorden (entropía) del universo siempre aumenta.</div>
+      </div>
+
+      <div class="topic-card">
+        <h3>5. Ley de Coulomb</h3>
+        <p>Describe la fuerza eléctrica entre dos cargas. Cargas iguales se repelen, cargas opuestas se atraen.</p>
+        <div class="tip"><strong>Salto Cuántico 🚀:</strong> Es como la gravedad, pero con polaridad. Imagina dos soles (cargas +) que se empujan, o un sol y un agujero negro (cargas + y -) que se atraen.</div>
+      </div>
+
+      <div class="topic-card">
+        <h3>6. Ley de Ohm</h3>
+        <p>Relaciona Voltaje, Corriente y Resistencia en un circuito (V = I * R). La base de toda la electrónica.</p>
+        <div class="tip"><strong>Metáfora Galáctica 🌌:</strong> El <strong>V</strong>oltaje es la presión del "río de energía". La <strong>I</strong>ntensidad (corriente) es el caudal de ese río. La <strong>R</strong>esistencia son las rocas que dificultan el paso.</div>
+      </div>
+      
+       <div class="topic-card">
+        <h3>7. Ley de Gauss</h3>
+        <p>Relaciona el flujo eléctrico a través de una superficie cerrada con la carga eléctrica encerrada.</p>
+        <div class="tip"><strong>Truco Mental 🧠:</strong> Imagina una "red para atrapar energía". La ley te dice que la cantidad de energía que atrapas es proporcional a la fuente que está dentro de la red.</div>
+      </div>
+      
+      <div class="topic-card">
+        <h3>8. Ley de Ampere</h3>
+        <p>Una corriente eléctrica crea un campo magnético circular a su alrededor.</p>
+        <div class="tip"><strong>Salto Cuántico 🚀:</strong> Piensa que un cable con corriente es como un vórtice. Crea un remolino magnético a su alrededor. La regla de la mano derecha te dice hacia dónde gira el remolino.</div>
+      </div>
+      
+      <div class="topic-card">
+        <h3>9. Ley de Faraday</h3>
+        <p>Un campo magnético cambiante induce una corriente eléctrica en un conductor. Así funcionan los generadores.</p>
+        <div class="tip"><strong>Metáfora Galáctica 🌌:</strong> Si mueves un imán (campo magnético) cerca de una antena (conductor), ¡generas energía (corriente) de la nada! Es la base de la comunicación subespacial.</div>
+      </div>
+      
+      <div class="topic-card">
+        <h3>10. Ondas</h3>
+        <p>Perturbaciones que transportan energía. Pueden ser mecánicas (sonido) o electromagnéticas (luz).</p>
+        <div class="tip"><strong>Truco Mental 🧠:</strong> Recuerda V=fλ (Velocidad = frecuencia * longitud de onda). "Victoria para la física lambda".</div>
+      </div>
+      
+      <div class="topic-card">
+        <h3>11. Óptica Geométrica</h3>
+        <p>Estudia la luz como rayos. Explica cómo funcionan los espejos y las lentes (reflexión y refracción).</p>
+        <div class="tip"><strong>Salto Cuántico 🚀:</strong> Reflexión: el rayo rebota como una bola de billar. Refracción: el rayo se "dobla" al pasar de un medio a otro, como un lápiz en un vaso de agua.</div>
+      </div>
+      
+      <div class="topic-card">
+        <h3>12. Efecto Doppler</h3>
+        <p>El cambio en la frecuencia de una onda (sonido o luz) debido al movimiento relativo entre la fuente y el observador.</p>
+        <div class="tip"><strong>Metáfora Galáctica 🌌:</strong> Es por eso que la sirena de una nave suena más aguda al acercarse (ondas comprimidas) y más grave al alejarse (ondas estiradas).</div>
+      </div>
+      
+      <div class="topic-card">
+        <h3>13. Principio de Pascal</h3>
+        <p>La presión aplicada a un fluido encerrado se transmite sin disminución a todas las partes del fluido.</p>
+        <div class="tip"><strong>Truco Mental 🧠:</strong> Es el secreto de los sistemas hidráulicos. Una pequeña fuerza en un área pequeña se convierte en una gran fuerza en un área grande. ¡Como levantar una nave con un dedo!</div>
+      </div>
+      
+      <div class="topic-card">
+        <h3>14. Principio de Arquímedes</h3>
+        <p>Un cuerpo sumergido en un fluido experimenta un empuje hacia arriba igual al peso del fluido desalojado.</p>
+        <div class="tip"><strong>Salto Cuántico 🚀:</strong> ¿Por qué flotan las naves en el agua (o en el espacio denso)? Porque el "empujón" del fluido es mayor que el peso de la nave. ¡Eureka!</div>
+      </div>
+      
+    </div>
+  </details>
+
+  <!-- SECCIÓN DE MATEMÁTICAS -->
+  <details>
+    <summary>🟣 Misión: Álgebra de Agujeros Negros</summary>
+    <div class="topics-grid">
+
+      <div class="topic-card">
+        <h3>1. Sucesiones Numéricas</h3>
+        <p>Series de números con un patrón. El truco es encontrar la "ley de formación" o la regla que los genera.</p>
+        <div class="tip"><strong>Truco Mental 🧠:</strong> Busca la diferencia (o la razón) entre números consecutivos. ¿Es constante? ¿Aumenta? Ese es tu primer sospechoso para descifrar el código.</div>
+      </div>
+
+      <div class="topic-card">
+        <h3>2. Factorización</h3>
+        <p>Descomponer una expresión algebraica en factores más simples (una multiplicación). Es como desarmar un motor en sus piezas.</p>
+        <div class="tip"><strong>Salto Cuántico 🚀:</strong> Busca siempre el "Factor Común" primero. Es la pieza que se repite en todo el motor y la primera que debes sacar.</div>
+      </div>
+
+      <div class="topic-card">
+        <h3>3. Ecuaciones Lineales</h3>
+        <p>Igualdades con una o más variables a la primera potencia. El objetivo es despejar la incógnita (la 'x').</p>
+        <div class="tip"><strong>Metáfora Galáctica 🌌:</strong> La ecuación es una balanza cósmica. Lo que haces de un lado del signo '=', debes hacerlo del otro para mantener el equilibrio del universo.</div>
+      </div>
+
+      <div class="topic-card">
+        <h3>4. Ecuaciones Cuadráticas</h3>
+        <p>Ecuaciones de segundo grado. Se resuelven con la fórmula general, la "Chicharronera".</p>
+        <div class="tip"><strong>Truco Mental 🧠:</strong> ¡Apréndete la fórmula general cantando! Es el himno de los matemáticos intergalácticos para resolver problemas complejos.</div>
+      </div>
+      
+      <div class="topic-card">
+        <h3>5. Geometría Euclidiana</h3>
+        <p>El estudio de puntos, líneas, ángulos, triángulos y polígonos en un plano. El Teorema de Pitágoras (a²+b²=c²) es el rey.</p>
+        <div class="tip"><strong>Salto Cuántico 🚀:</strong> La suma de los ángulos internos de CUALQUIER triángulo siempre es 180°. ¡Sin excepciones en este universo!</div>
+      </div>
+
+      <div class="topic-card">
+        <h3>6. Funciones Trigonométricas</h3>
+        <p>Seno, Coseno, Tangente. Relacionan los ángulos de un triángulo rectángulo con sus lados. SOH-CAH-TOA.</p>
+        <div class="tip"><strong>Mnemotecnia 📚:</strong> SOH (Seno=Opuesto/Hipotenusa), CAH (Coseno=Adyacente/Hipotenusa), TOA (Tangente=Opuesto/Adyacente). ¡El grito de guerra de la trigonometría!</div>
+      </div>
+      
+      <div class="topic-card">
+        <h3>7. Geometría Analítica</h3>
+        <p>Une el álgebra y la geometría usando el plano cartesiano. Describe figuras (rectas, cónicas) con ecuaciones.</p>
+        <div class="tip"><strong>Metáfora Galáctica 🌌:</strong> El plano cartesiano es tu mapa estelar. Cada ecuación es una ruta de vuelo (recta, elipse, parábola) que tu nave puede seguir.</div>
+      </div>
+      
+       <div class="topic-card">
+        <h3>8. Límites</h3>
+        <p>Analiza a qué valor se aproxima una función cuando la variable se acerca a un número específico.</p>
+        <div class="tip"><strong>Salto Cuántico 🚀:</strong> Pregúntate: "Si mi nave se acerca infinitamente a un planeta (un punto), ¿a qué altitud (valor) tiende a estabilizarse?". No importa si aterriza, solo a dónde se acerca.</div>
+      </div>
+
+      <div class="topic-card">
+        <h3>9. La Derivada</h3>
+        <p>Mide la razón de cambio instantánea de una función. Geométricamente, es la pendiente de la recta tangente en un punto.</p>
+        <div class="tip"><strong>Metáfora Galáctica 🌌:</strong> La derivada es el velocímetro de tu nave. Te dice tu velocidad exacta (razón de cambio) en un instante preciso de tu viaje (la función).</div>
+      </div>
+
+      <div class="topic-card">
+        <h3>10. La Integral</h3>
+        <p>La operación inversa a la derivada. Geométricamente, calcula el área bajo la curva de una función.</p>
+        <div class="tip"><strong>Truco Mental 🧠:</strong> Derivar es "descomponer" o analizar la velocidad. Integrar es "reconstruir" o calcular la distancia total recorrida. Son dos caras de la misma moneda cósmica.</div>
+      </div>
+      
+      <div class="topic-card">
+        <h3>11. Métodos de Integración</h3>
+        <p>Técnicas para resolver integrales complejas (por partes, sustitución, fracciones parciales).</p>
+        <div class="tip"><strong>Salto Cuántico 🚀:</strong> "Un Día Vi Una Vaca Sin Cola Vestida De Uniforme" para la integración por partes: ∫u dv = uv - ∫v du.</div>
+      </div>
+      
+      <div class="topic-card">
+        <h3>12. Teorema Fundamental del Cálculo</h3>
+        <p>El puente que conecta las derivadas y las integrales, demostrando que son operaciones inversas.</p>
+        <div class="tip"><strong>Metáfora Galáctica 🌌:</strong> Es la ley universal que te permite calcular la distancia total de tu viaje (integral) simplemente conociendo las lecturas de tu velocímetro (derivada).</div>
+      </div>
+      
+      <div class="topic-card">
+        <h3>13. Probabilidad</h3>
+        <p>Mide la certeza de que ocurra un evento. Se calcula como: (casos favorables / casos totales).</p>
+        <div class="tip"><strong>Truco Mental 🧠:</strong> La probabilidad siempre es un número entre 0 (imposible) y 1 (seguro). Si te da 5, ¡revisa tus cálculos de navegación!</div>
+      </div>
+      
+       <div class="topic-card">
+        <h3>14. Estadística Descriptiva</h3>
+        <p>Organiza y resume datos. Las medidas clave son la media (promedio), mediana (el valor del medio) y moda (el que más se repite).</p>
+        <div class="tip"><strong>Salto Cuántico 🚀:</strong> "La moda es lo que más se ve. La mediana es el ecuador del planeta de datos. La media es el centro de gravedad de todos los datos."</div>
+      </div>
+      
+       <div class="topic-card">
+        <h3>15. Teorema de Bayes</h3>
+        <p>Calcula la probabilidad de un evento basándose en conocimiento previo de condiciones que podrían estar relacionadas.</p>
+        <div class="tip"><strong>Metáfora Galáctica 🌌:</strong> Es el sistema de diagnóstico de tu nave. Si los sensores fallan (evento), Bayes te ayuda a calcular la probabilidad de que la causa sea una tormenta de asteroides (condición previa).</div>
+      </div>
+
+    </div>
+  </details>
+
+  <section>
+    <h2>⚡ Consejos Finales para la Maratón</h2>
+    <div class="final-tips-card">
+      <ul>
+        <li><strong>Combustible Mental:</strong> Hidrátate constantemente. Tu cerebro es 75% agua. Come snacks saludables como nueces o fruta, son energía de liberación lenta.</li>
+        <li><strong>Recarga de Escudos:</strong> Duerme bien. El sueño consolida la memoria. Estudiar toda la noche es como volar con los escudos desactivados.</li>
+        <li><strong>Repaso Activo:</strong> No solo leas. Intenta explicar los temas en voz alta a un tripulante imaginario. Si puedes enseñarlo, lo dominas.</li>
+        <li><strong>Salto Cuántico de Repaso:</strong> Al final de cada día, dedica 30 minutos a repasar súper rápido los títulos de los temas vistos. Esto refuerza las conexiones neuronales.</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer class="maraton-footer">
+    <p>Desarrollado por el Comando Neptur. Todos los derechos reservados © 2025.</p>
+    <p><em>Este documento forma parte de la misión educativa IPN Galaxia Beta 3.0.</em></p>
+  </footer>
+
+</div>
